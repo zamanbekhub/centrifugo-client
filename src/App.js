@@ -1,24 +1,17 @@
-import logo from './logo.svg';
+// src/App.js
+import React from 'react';
+import Chat from './components/chat';
 import './App.css';
 
 function App() {
+  const centrifugoUrl = 'ws://localhost:8000/connection/websocket'; // Replace with your Centrifugo server URL
+  const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM3MjIiLCJleHAiOjE3MDU4NjY1ODIsImlhdCI6MTcwNTI2MTc4Mn0.tUbUbKxY0m3j_gEdRtjHAbBrv6RiyyaIU92miCNWwac'; // Replace with your token
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        <header className="App-header">Centrifugo Chat</header>
+        <Chat centrifugoUrl={centrifugoUrl} token={token} />
+      </div>
   );
 }
 
